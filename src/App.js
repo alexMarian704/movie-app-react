@@ -45,7 +45,7 @@ function App() {
             <Aboutus />
           </Route>
           <Route path="/movies" exact>
-            <div>test</div>
+            <div>test 2 dumnezeu cu mila sa moara dinamo</div>
           </Route>
           <Route path="/movies/:id">
             <SingleMovie />

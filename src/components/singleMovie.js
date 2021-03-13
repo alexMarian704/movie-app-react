@@ -20,6 +20,7 @@ export default function SingleMovie() {
                     <h1 id="single-title">{data.title}</h1>
                     <img src={`${IMAGE_API}/${data.backdrop_path}`} alt="movie poster" id="movie-backdrop"/>
                     <p>{data.overview}</p>
+                    <h1>test</h1>
                 </div>}
         </div>
     )
