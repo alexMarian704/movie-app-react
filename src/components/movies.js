@@ -27,7 +27,7 @@ export default function Movies() {
             }}
             transition={{ duration: 0.8 }}
         >
-            {!data && !error && <div>Loading</div>}
+            {!data && !error && <div id="loading">Loading</div>}
             {error && <div>{error}</div>}
             {data &&
                 data.map((movie, index) => {

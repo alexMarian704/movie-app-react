@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Movies from './components/movies';
 import useWindowDimensions from './useWindowResize';
 import SingleMovie from './components/singleMovie';
+import Searchmovie from './components/searchmovie';
 
 function App() {
   const [inout, setInout] = useState(-110);
@@ -45,7 +46,7 @@ function App() {
             <Aboutus />
           </Route>
           <Route path="/movies" exact>
-            <div>test 2 dumnezeu cu mila sa moara dinamo</div>
+            <Searchmovie />
           </Route>
           <Route path="/movies/:id">
             <SingleMovie />

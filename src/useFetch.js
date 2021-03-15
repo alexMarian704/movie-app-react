@@ -1,32 +1,33 @@
 import { useEffect, useState } from "react";
 
-//const SEARCHAPI = "https://api.themoviedb.org/3/search/movie?&api_key=&query=";
+function useFetch(url, result, array ,search) {
+    const [data, setData] = useState(null);
+    const [error, setError] = useState(null);
 
-function useFetch(url , result){
-    const [data , setData] =useState(null);
-    const [error , setError] =useState(null);
-
-    useEffect(()=>{
+    useEffect(() => {
         fetch(`${url}`)
-        .then((res)=>{
-            return res.json()
-        })
-        .then((data)=>{
-            if(result){
-            setData(data.results)
-            console.log(data.results)
-            }else{
-                setData(data)
-                console.log(data)
-            }
-        })
-        .catch((err)=>{
-            setError(err);
-            console.error(err)
-        })
-    }, [])
+            .then((res) => {
+                return res.json()
+            })
+            .then((data) => {
+                if (result) {
+                    setData(data.results)
+                    // console.log(data.results)
+                } else if (array) {
+                    setData(data.cast)
+                    // console.log(data.cast)
+                } else {
+                    setData(data)
+                    // console.log(data)
+                }
+            })
+            .catch((err) => {
+                setError(err);
+                console.error(err)
+            })
+    }, [search])
 
-    return {data , error}
+    return { data, error }
 }
 
 export default useFetch;
