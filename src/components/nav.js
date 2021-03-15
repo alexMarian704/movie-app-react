@@ -22,11 +22,11 @@ export default function Nav({open , closeNav}) {
                     </div>
                 </Link>
 
-                <Link to="/aboutus" onClick={closeNav}>
+                {/* <Link to="/aboutus" onClick={closeNav}>
                     <div id="routes">
                         <h1>About Us</h1>
                     </div>
-                </Link>
+                </Link> */}
             </div>
             <div className="footer">
                 <h2>Movie App</h2>

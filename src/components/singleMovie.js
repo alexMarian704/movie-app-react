@@ -31,7 +31,7 @@ export default function SingleMovie() {
             transition = {{duration : 0.7}}
         >
             {!data && !error && <div id="loading">Loading....</div>}
-            {error && <div>{error}</div>}
+            {error && <div id="error">{error}</div>}
             {data &&
                 <div className="single-container">
                     <button onClick={back} id="goBack"><FontAwesomeIcon icon="arrow-left"/></button>

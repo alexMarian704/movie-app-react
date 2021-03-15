@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import useFetch from '../useFetch';
 import { Link } from 'react-router-dom';
+import { motion } from "framer-motion"
 const key = process.env.REACT_APP_API_KEY;
 
 export default function Searchmovie() {
@@ -17,7 +18,21 @@ export default function Searchmovie() {
     }
 
     return (
-        <div>
+        <motion.div
+            initial={{
+                opacity: 0,
+                scale: 0.3
+            }}
+            animate={{
+                opacity: 1,
+                scale: 1
+            }}
+            exit={{
+                opacity: 1,
+                scale: 1
+            }}
+            transition={{ duration: 0.8 }}
+        >
             <div>
                 <div id="container">
                     <div id="search-container">
@@ -25,8 +40,8 @@ export default function Searchmovie() {
                         <br />
                         <input type="text" id="search" onChange={change} value={search} autoComplete="off" autoCorrect="off" />
                     </div>
-                    {!data && !error && <div>Loading...</div>}
-                    {error && <h1>{error}</h1>}
+                    {!data && !error && <div id="loading">Loading...</div>}
+                    {error && <h1 id="error">{error}</h1>}
                     {data &&
                         data.map((movie, index) => {
                             if (movie.backdrop_path != null) {
@@ -44,6 +59,6 @@ export default function Searchmovie() {
                     }
                 </div>
             </div>
-        </div>
+        </motion.div>
     )
 }

@@ -331,3 +331,41 @@ hr {
       top: 20px;
     }
 }
+
+#loading{
+  font-size: 30px;
+  font-weight: 700;
+}
+
+#error{
+  font-size: 26px;
+  font-weight: 700;
+}
+
+#page-error{
+  color: rgb(180, 25, 25);
+  font-size: 40px;
+  font-weight: 700
+}
+
+#back-home{
+  color: rgb(255, 255, 255);
+  font-size: 24px;
+  background-color: rgb(151, 35, 35);
+  display: block;
+  width: 40%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  border-radius: 30px;
+  min-width: 260px;
+  max-width: 350px;
+}
+
+#error-container{
+  width: 50vw;
+  margin: auto;
+  text-align: center;
+}

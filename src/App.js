@@ -8,6 +8,7 @@ import Movies from './components/movies';
 import useWindowDimensions from './useWindowResize';
 import SingleMovie from './components/singleMovie';
 import Searchmovie from './components/searchmovie';
+import PageError from './components/404';
 
 function App() {
   const [inout, setInout] = useState(-110);
@@ -42,14 +43,17 @@ function App() {
           <Route path="/" exact>
             <Movies />
           </Route>
-          <Route path="/aboutus" exact>
+          {/* <Route path="/aboutus" exact>
             <Aboutus />
-          </Route>
+          </Route> */}
           <Route path="/movies" exact>
             <Searchmovie />
           </Route>
           <Route path="/movies/:id">
             <SingleMovie />
+          </Route>
+          <Route path="*">
+            <PageError />
           </Route>
         </Switch>
       </Router>
